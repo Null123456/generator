@@ -1,0 +1,30 @@
+#���ö˿ں�
+server:
+  port: 8081
+  servlet:
+    context-path: /resumption
+
+#���÷�����
+spring:
+  application:
+    name: resumption
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ssm?characterEncoding=utf-8
+    username: root
+    password: 123456
+    hikari:
+      maximum-pool-size: 30
+      minimum-idle: 10
+  mvc:
+    static-path-pattern: /static/**  #������̬��Դ����
+    view:
+      prefix:  /pages/
+      suffix: .jsp
+#����xml��ʽ��mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.tj.resumption.pojo
+logging:
+  level:
+    com.tj.mapper: DEBUG
